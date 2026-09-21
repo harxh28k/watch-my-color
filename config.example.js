@@ -1,0 +1,1 @@
+export const OMDB_API_KEY = "YOUR_OMDB_KEY_HERE";

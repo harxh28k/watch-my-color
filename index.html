@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch Your Color — Find Your Cinematic Palette</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- 1. EDITORIAL LANDING VIEW -->
+        <section id="landing-view" class="view active">
+            <div class="editorial-landing">
+                <div class="logo-badge">
+                    <!-- YOUR -->
+                    <span class="l-r">Y</span>
+                    <span class="l-a">O</span>
+                    <span class="l-t">U</span>
+                    <span class="l-c">R</span>
+                    <span class="l-space">&nbsp;</span>
+                    <!-- CINEMATIC -->
+                    <span class="l-h">C</span>
+                    <span class="l-y">I</span>
+                    <span class="l-o">N</span>
+                    <span class="l-u">E</span>
+                    <span class="l-r2">M</span>
+                    <span class="l-c2">A</span>
+                    <span class="l-o2">T</span>
+                    <span class="l-l">I</span>
+                    <span class="l-o3">C</span>
+                    <span class="l-space">&nbsp;</span>
+                    <!-- COLOR -->
+                    <span class="l-r3">C</span>
+                    <span class="l-r">O</span>
+                    <span class="l-a">L</span>
+                    <span class="l-t">O</span>
+                    <span class="l-c">R</span>
+                </div>
+                <h1 class="editorial-headline">
+                    What type of viewer are <em>you?</em>
+                </h1>
+
+                <p class="editorial-description">
+                    Cinema is more than stories—it is emotional geometry and light. Every state of mind gravitates
+                    toward a distinct visual spectrum. Find your current cinematic palette and uncover films graded for
+                    your mood.
+                </p>
+
+                <button id="start-btn" class="begin-btn">BEGIN</button>
+
+
+            </div>
+        </section>
+
+        <!-- 2. QUIZ VIEW -->
+        <section id="quiz-view" class="view hidden">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span id="question-progress" class="progress-indicator">STATEMENT 1 OF 8</span>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="statement-card">
+                    <h2 id="statement-text" class="statement-text">"I crave stories that feel like a warm, nostalgic
+                        memory."</h2>
+                </div>
+
+                <div class="likert-container">
+                    <button class="likert-btn" data-value="2">Strongly Agree</button>
+                    <button class="likert-btn" data-value="1">Agree</button>
+                    <button class="likert-btn" data-value="0">Neutral / Indifferent</button>
+                    <button class="likert-btn" data-value="-1">Disagree</button>
+                    <button class="likert-btn" data-value="-2">Strongly Disagree</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. RESULT VIEW -->
+        <section id="result-view" class="view hidden">
+            <div class="result-container">
+                <div class="result-header">
+                    <p class="result-label">YOUR CINEMATIC PALETTE</p>
+                    <h2 id="result-color-title" class="result-title">Balanced Slate Blue</h2>
+                </div>
+
+                <div class="result-swatch-container">
+                    <div id="result-swatch" class="result-swatch blue"></div>
+                </div>
+
+                <div class="result-profile-summary">
+                    <span id="result-archetype" class="result-archetype">The Analytical Observer</span>
+                    <p id="result-description" class="result-description">
+                        You seek clinical precision, intellectual architecture, and quiet isolation where every decision
+                        is weighed with calculated calm.
+                    </p>
+                </div>
+
+                <div class="spectrum-details">
+                    <div class="detail-item">
+                        <span class="detail-key">INTENSITY</span>
+                        <span id="intensity-value" class="detail-value">50% Saturation</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-key">LEANING TOWARDS</span>
+                        <span id="neighbor-value" class="detail-value">Black & White</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-key">POLAR OPPOSITE</span>
+                        <span id="opposite-value" class="detail-value">Yellow</span>
+                    </div>
+                </div>
+
+                <div class="recommendations-section">
+                    <h3 class="recommendations-heading">RECOMMENDED WATCHES</h3>
+                    <div id="movie-grid" class="movie-grid"></div>
+                </div>
+
+                <button id="restart-btn" class="secondary-btn">Retake Diagnosis</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

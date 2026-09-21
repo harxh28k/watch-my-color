@@ -1,0 +1,11 @@
+# Private configurations & API keys
+config.js
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/

@@ -1,0 +1,434 @@
+/* --- Global Theme & Palette --- */
+:root {
+    --bg-color: #f6f3e8; /* Warm cream background */
+    --text-main: #181816;
+    --text-muted: #5e5d59;
+    --card-bg: #ffffff;
+    --border-color: #e2ded2;
+  
+    /* Palette Colors */
+    --c-yellow: #d99b26;
+    --c-orange: #d95b27;
+    --c-red: #b92b3a;
+    --c-purple: #70397d;
+    --c-blue: #2a6f97;
+    --c-green: #347a50;
+    --c-grey: #626c77;
+    --c-black: #1a1a1a;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .app-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: block;
+    position: relative;
+  }
+  
+  /* View State Management */
+  .view {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  .view.hidden {
+    display: none !important;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.99); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* =========================================================
+     1. EDITORIAL LANDING PAGE (DM SANS)
+     ========================================================= */
+  .editorial-landing {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .logo-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+    display: inline-flex;
+  }
+  
+  .l-r { color: var(--c-yellow); }
+  .l-a { color: var(--c-orange); }
+  .l-t { color: var(--c-red); }
+  .l-c { color: var(--c-purple); }
+  .l-h { color: var(--c-blue); }
+  .l-y { color: var(--c-green); }
+  .l-o { color: var(--c-yellow); }
+  .l-u { color: var(--c-orange); }
+  .l-r2 { color: var(--c-red); }
+  .l-c2 { color: var(--c-blue); }
+  .l-o2 { color: var(--c-green); }
+  .l-l { color: var(--c-purple); }
+  .l-o3 { color: var(--c-grey); }
+  .l-r3 { color: var(--c-black); }
+  
+  .editorial-headline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  
+  .editorial-headline em {
+    font-style: italic;
+    font-weight: 700;
+  }
+  
+  .editorial-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  
+  .begin-btn {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #1a1a18;
+    color: #faf9f6;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    padding: 16px 52px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+  
+  .begin-btn:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+  }
+  
+  .share-subline {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  
+  /* =========================================================
+     2. QUIZ VIEW (DM SANS)
+     ========================================================= */
+  .quiz-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .quiz-header {
+    width: 100%;
+    margin-bottom: 36px;
+  }
+  
+  .progress-indicator {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  
+  .progress-bar-container {
+    width: 100%;
+    height: 3px;
+    background-color: var(--border-color);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-fill {
+    width: 12.5%;
+    height: 100%;
+    background-color: var(--text-main);
+    transition: width 0.35s ease;
+  }
+  
+  .statement-card {
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  
+  .statement-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-main);
+  }
+  
+  .likert-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .likert-btn {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .likert-btn:hover {
+    border-color: var(--text-main);
+    background-color: #ffffff;
+    transform: translateX(4px);
+  }
+  
+  /* =========================================================
+     3. RESULT VIEW (DM SANS - SINGLE FRAME FIT)
+     ========================================================= */
+  .result-container {
+    max-width: 1040px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 1.5vh 24px 2vh 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .result-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  
+  .result-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .result-swatch-container {
+    margin: 0.4vh 0;
+  }
+  
+  .result-swatch {
+    width: 120px;
+    height: 38px;
+    border-radius: 9999px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .result-swatch.yellow { background-color: var(--c-yellow); }
+  .result-swatch.orange { background-color: var(--c-orange); }
+  .result-swatch.red { background-color: var(--c-red); }
+  .result-swatch.purple { background-color: var(--c-purple); }
+  .result-swatch.blue { background-color: var(--c-blue); }
+  .result-swatch.green { background-color: var(--c-green); }
+  .result-swatch.grey { background-color: var(--c-grey); }
+  .result-swatch.black-white { 
+    background: linear-gradient(135deg, #1f2022 50%, #e6e3da 50%);
+    border: 1px solid var(--border-color);
+  }
+  
+  .result-profile-summary {
+    max-width: 620px;
+    margin: 0.3vh auto;
+    text-align: center;
+  }
+  
+  .result-archetype {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 3px;
+  }
+  
+  .result-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.88rem, 1.25vw, 0.98rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--text-muted);
+  }
+  
+  .spectrum-details {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 680px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 8px 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  }
+  
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .detail-key {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  
+  .detail-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+  
+  .recommendations-section {
+    width: 100%;
+  }
+  
+  .recommendations-heading {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    width: 100%;
+  }
+  
+  .movie-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+  }
+  
+  .movie-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    max-height: 26vh;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .movie-card-info {
+    padding: 6px 10px 8px 10px;
+  }
+  
+  .movie-card-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-main);
+  }
+  
+  .movie-card-year {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  
+  .secondary-btn {
+    font-family: 'DM Sans', sans-serif;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1.5px solid var(--border-color);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 28px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0.5vh;
+  }
+  
+  .secondary-btn:hover {
+    background-color: #ffffff;
+    border-color: var(--text-main);
+  }
