@@ -1,6 +1,5 @@
 // services/omdb.js
-import { OMDB_API_KEY } from "../config.js";
-const OMDB_API_KEY = "df8c8440"; // Put your activated 8-character OMDb key inside the quotes
+const OMDB_API_KEY = "df8c8440";
 const BASE_URL = "https://www.omdbapi.com/";
 
 // Expanded pool of 20 distinct films per color aesthetic
