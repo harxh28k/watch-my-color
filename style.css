@@ -433,80 +433,141 @@
     border-color: var(--text-main);
   }
   @media (max-width: 768px) {
-    /* 1. Grid container matching the width of your diagnosis card */
+    /* 1. Fit the whole screen neatly in 100vh with no overflow */
+    html, body {
+      height: 100% !important;
+      overflow-x: hidden !important;
+    }
+  
+    /* Compact the outer container and reduce padding */
+    .container,
+    .result-container,
+    .screen,
+    main {
+      padding: 0.5rem 0.85rem !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      max-height: 100dvh !important;
+      box-sizing: border-box !important;
+    }
+  
+    /* 2. Shrink top typography & color pill */
+    h1, .palette-title {
+      font-size: 1.35rem !important;
+      margin: 0.2rem 0 !important;
+    }
+  
+    .color-pill,
+    .palette-swatch {
+      height: 24px !important;
+      width: 90px !important;
+      margin: 0.25rem auto !important;
+      border-radius: 12px !important;
+    }
+  
+    .archetype-title {
+      font-size: 0.75rem !important;
+      letter-spacing: 0.05em !important;
+      margin-top: 0.25rem !important;
+    }
+  
+    .archetype-description,
+    .palette-description {
+      font-size: 0.75rem !important;
+      line-height: 1.25 !important;
+      margin: 0.25rem auto !important;
+      max-width: 320px !important;
+    }
+  
+    /* 3. Compact the 3-metric card (Intensity / Leaning / Polar) */
+    .metrics-card,
+    .palette-metrics,
+    .stats-container {
+      padding: 0.35rem 0.5rem !important;
+      margin: 0.35rem auto !important;
+      gap: 0.5rem !important;
+    }
+  
+    .metric-label {
+      font-size: 0.6rem !important;
+    }
+  
+    .metric-value {
+      font-size: 0.75rem !important;
+    }
+  
+    /* 4. Section header */
+    .section-label,
+    .recommended-title {
+      font-size: 0.68rem !important;
+      letter-spacing: 0.08em !important;
+      margin: 0.4rem 0 0.3rem 0 !important;
+    }
+  
+    /* 5. 3 Horizontal Movie Cards in one tidy row */
     .movie-grid,
     .movies-container,
     .recommendations-grid,
     #recommendations-list {
       display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important; /* 2 clean equal columns */
-      gap: 0.75rem !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0.45rem !important;
       width: 100% !important;
-      max-width: 380px !important;
       margin: 0 auto !important;
-      padding: 0 0.5rem !important;
-      box-sizing: border-box !important;
+      padding: 0 !important;
     }
   
-    /* If there are 3 cards, make the 3rd one center or span full width */
-    .movie-card:last-child:nth-child(odd) {
-      grid-column: span 2 !important;
-      max-width: 50% !important;
-      margin: 0 auto !important;
-    }
-  
-    /* 2. Unified card styling */
     .movie-card {
       display: flex !important;
       flex-direction: column !important;
       width: 100% !important;
-      border-radius: 14px !important;
+      border-radius: 8px !important;
       overflow: hidden !important;
-      box-sizing: border-box !important;
-      height: auto !important;
+      background: #ffffff !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
     }
   
-    /* 3. Poster locked into 4:3 / 16:10 cinematic banner ratio */
     .movie-card img,
     .movie-poster {
       width: 100% !important;
-      aspect-ratio: 16 / 10 !important;
+      aspect-ratio: 2 / 3 !important;
       height: auto !important;
+      max-height: 105px !important;
       object-fit: cover !important;
       display: block !important;
     }
   
-    /* 4. Text container with split row alignment */
     .movie-card-info,
     .movie-info {
-      padding: 0.6rem 0.5rem !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 0.2rem !important;
-      text-align: left !important;
+      padding: 0.25rem 0.3rem !important;
     }
   
-    /* 5. Title */
     .movie-card h3,
     .movie-title {
-      font-size: 0.85rem !important;
-      font-weight: 600 !important;
+      font-size: 0.7rem !important;
+      line-height: 1.15 !important;
       margin: 0 !important;
-      line-height: 1.2 !important;
       white-space: nowrap !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
+      color: #111111 !important;
     }
   
-    /* 6. Metadata row (Year on left, Rating on right) */
-    .movie-meta,
-    .movie-details {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      width: 100% !important;
-      font-size: 0.75rem !important;
-      opacity: 0.75 !important;
-      margin-top: 0.15rem !important;
+    .movie-year,
+    .movie-rating {
+      font-size: 0.62rem !important;
+      color: #666666 !important;
+      margin-top: 0.1rem !important;
+    }
+  
+    /* 6. Tighten the Retake Diagnosis button at the base */
+    .retake-btn,
+    .btn,
+    button {
+      padding: 0.45rem 1.25rem !important;
+      font-size: 0.8rem !important;
+      margin: 0.5rem auto 0.25rem auto !important;
     }
   }
