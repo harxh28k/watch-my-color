@@ -433,77 +433,80 @@
     border-color: var(--text-main);
   }
   @media (max-width: 768px) {
-    /* 1. Stack the recommendations neatly with equal width */
+    /* 1. Grid container matching the width of your diagnosis card */
     .movie-grid,
     .movies-container,
     .recommendations-grid,
     #recommendations-list {
-      display: flex !important;
-      flex-direction: column !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important; /* 2 clean equal columns */
       gap: 0.75rem !important;
       width: 100% !important;
-      max-width: 360px !important;
+      max-width: 380px !important;
       margin: 0 auto !important;
-      padding: 0 1rem !important;
+      padding: 0 0.5rem !important;
       box-sizing: border-box !important;
     }
   
-    /* 2. Horizontal layout: image left, text right */
+    /* If there are 3 cards, make the 3rd one center or span full width */
+    .movie-card:last-child:nth-child(odd) {
+      grid-column: span 2 !important;
+      max-width: 50% !important;
+      margin: 0 auto !important;
+    }
+  
+    /* 2. Unified card styling */
     .movie-card {
       display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      background: #ffffff !important;
-      border-radius: 12px !important;
-      padding: 0.6rem !important;
-      gap: 1rem !important;
+      flex-direction: column !important;
       width: 100% !important;
-      box-sizing: border-box !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+      border-radius: 14px !important;
       overflow: hidden !important;
+      box-sizing: border-box !important;
+      height: auto !important;
     }
   
-    /* 3. Fixed, elegant poster thumbnail proportion */
+    /* 3. Poster locked into 4:3 / 16:10 cinematic banner ratio */
     .movie-card img,
     .movie-poster {
-      width: 68px !important;
-      min-width: 68px !important;
-      height: 98px !important;
-      aspect-ratio: 2 / 3 !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 10 !important;
+      height: auto !important;
       object-fit: cover !important;
-      border-radius: 8px !important;
       display: block !important;
-      margin: 0 !important;
     }
   
-    /* 4. Left-aligned, readable text block */
+    /* 4. Text container with split row alignment */
     .movie-card-info,
     .movie-info {
+      padding: 0.6rem 0.5rem !important;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: center !important;
-      align-items: flex-start !important;
+      gap: 0.2rem !important;
       text-align: left !important;
-      padding: 0 !important;
-      flex: 1 !important;
-      min-width: 0 !important;
     }
   
+    /* 5. Title */
     .movie-card h3,
     .movie-title {
-      font-size: 0.95rem !important;
+      font-size: 0.85rem !important;
       font-weight: 600 !important;
-      color: #1a1a1a !important;
-      margin: 0 0 0.25rem 0 !important;
-      line-height: 1.3 !important;
-      white-space: normal !important;
-      word-break: break-word !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
     }
   
-    .movie-year,
-    .movie-rating {
-      font-size: 0.8rem !important;
-      color: #71717a !important;
-      margin: 0 !important;
+    /* 6. Metadata row (Year on left, Rating on right) */
+    .movie-meta,
+    .movie-details {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+      font-size: 0.75rem !important;
+      opacity: 0.75 !important;
+      margin-top: 0.15rem !important;
     }
   }
