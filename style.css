@@ -432,21 +432,63 @@
     background-color: #ffffff;
     border-color: var(--text-main);
   }
-  /* Mobile-only fixes */
-@media (max-width: 768px) {
-  .movie-card h3,
-  .movie-title {
-    font-size: 0.95rem !important;
-    line-height: 1.25 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: unset !important;
-    display: block !important;
+  @media (max-width: 768px) {
+    /* 1. Force the movie container into a neat 1-column stack or 2-column grid */
+    .movie-grid,
+    .movies-container,
+    .recommendations-grid,
+    #recommendations-list {
+      display: grid !important;
+      grid-template-columns: 1fr !important; /* Stack 1 movie per row on phones */
+      gap: 1.25rem !important;
+      width: 100% !important;
+      max-width: 320px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      overflow: visible !important;
+    }
+  
+    /* 2. Make every movie card identical, neat, and white-boxed */
+    .movie-card {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      height: auto !important;
+      background: #ffffff !important;
+      border-radius: 14px !important;
+      overflow: hidden !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    }
+  
+    /* 3. Lock every poster to the exact standard 2:3 cinematic poster ratio */
+    .movie-card img,
+    .movie-poster {
+      width: 100% !important;
+      aspect-ratio: 2 / 3 !important;
+      height: auto !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+  
+    /* 4. Fix typography and spacing inside the card */
+    .movie-card-info,
+    .movie-info {
+      padding: 1rem !important;
+      text-align: left !important;
+    }
+  
+    .movie-card h3,
+    .movie-title {
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      color: #111111 !important;
+      margin: 0 0 0.25rem 0 !important;
+      white-space: normal !important;
+    }
+  
+    .movie-year,
+    .movie-rating {
+      font-size: 0.85rem !important;
+      color: #666666 !important;
+    }
   }
-
-  .movie-card {
-    height: auto !important;
-    min-height: unset !important;
-    overflow: visible !important;
-  }
-}
