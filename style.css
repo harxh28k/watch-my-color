@@ -432,3 +432,21 @@
     background-color: #ffffff;
     border-color: var(--text-main);
   }
+  /* Mobile-only fixes */
+@media (max-width: 768px) {
+  .movie-card h3,
+  .movie-title {
+    font-size: 0.95rem !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    display: block !important;
+  }
+
+  .movie-card {
+    height: auto !important;
+    min-height: unset !important;
+    overflow: visible !important;
+  }
+}
